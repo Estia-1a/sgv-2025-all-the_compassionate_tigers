@@ -75,5 +75,13 @@ header h1 {
 }
 
 
+.carte-bleue p,
+.carte-verte p,
+.carte-mauve p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
 
 
