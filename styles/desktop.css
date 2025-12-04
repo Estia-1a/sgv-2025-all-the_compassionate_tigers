@@ -162,6 +162,11 @@ flex: 1;                    /* chaque carte prend 1/3 de la ligne */
   text-underline-offset: 2px; /* petit décalage de soulignement (plus lisible) */
 }
 
+/* Effet au survol (optionnel) */
+.carte-lien:hover {
+  color: #06251d;
+  text-decoration-thickness: 2px;
+}
 
 
 
