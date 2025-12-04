@@ -102,15 +102,34 @@ flex: 1;                    /* chaque carte prend 1/3 de la ligne */
 
 
 
-/* === Image centrée et agrandie === */
+
+/* Cadre image centré et grand */
 .carte-image{
-  display:block;          /* permet margin:auto */
-  margin: 10px auto 6px;  /* centre horizontalement */
-  width: 100%;            /* prend la largeur disponible dans la carte */
-  max-width: 320px;       /* limite pour éviter d’être trop large */
-  height: auto;           /* garde les proportions */
-  object-fit: contain;    /* pas de recadrage, pas de déformation */
+  display:flex;                 /* centre l’image */
+  justify-content:center;
+  align-items:center;
+  margin-top: 12px;
+  width: 100%;
+  max-width: 360px;             /* largeur max du cadre */
+  height: 200px;                /* hauteur fixe : visuel régulier */
+  margin-left:auto;             /* centre le cadre */
+  margin-right:auto;
+  border-radius:10px;           /* optionnel: angles doux sur l’image */
+  overflow:hidden;              /* cache ce qui dépasse (recadrage) */
+  background: rgba(255,255,255,.25); /* légère teinte, optionnel */
 }
+
+
+.carte-image img{
+  display: block;               /* supprime l'espace inline */
+  width: 100%;
+  height: 100%;                 /* indispensable pour remplir la hauteur du cadre */
+  object-fit: cover;            /* remplit et recadre proprement */
+  object-position: center;      /* centre le recadrage */
+  margin: 0;                    /* aucune marge autour */
+  border: 0;
+}
+
 
 
 
