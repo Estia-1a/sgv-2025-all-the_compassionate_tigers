@@ -1,0 +1,21 @@
+
+header {
+    display: flex;              /* Met l'image et le texte sur la même ligne */
+    align-items: center;        /* Aligne verticalement */
+    padding: 10px 20px;         /* Espacement autour */
+    background-color: #f4f1f1;  /* Couleur de fond */
+    border-bottom: 1px solid #ccc; /* Ligne en bas */
+}
+
+/* Image du logo */
+.logo {
+    width: 20px;                /* Taille de l'image */
+    height: auto;               /* Garde les proportions */
+    margin-right: 10px;         /* Espace entre l'image et le titre */
+}
+
+/* Titre */
+header h1 {
+    font-size: 24px;
+    color: #020202;
+}
