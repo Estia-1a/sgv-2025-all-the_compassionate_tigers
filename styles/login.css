@@ -1,0 +1,21 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  width: min(92vw, 560px);
+  margin: 10vh auto 0;
+  padding: 16px;
+}
+
+.login-container h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.login-container p {
+  margin: 0 0 10px;
+  font-size: 15px;
+}

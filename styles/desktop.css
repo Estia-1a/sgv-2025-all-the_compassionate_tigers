@@ -31,66 +31,6 @@ header h1 {
 }
 
 
-/* ===== POPUP via :target (commun) ===== */
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;                /* caché par défaut */
-  z-index: 1000;
-}
-
-/* Quand l’URL contient #login, on affiche le modal */
-.modal:target {
-  display: block;
-}
-
-/* Fond gris cliquable (permet de fermer) */
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: block;               /* <a> occupe tout l’écran */
-}
-
-/* Boîte centrale du popup */
-.modal-dialog {
-  position: relative;
-  background: #fff;
-  width: min(92vw, 560px);      /* s’adapte à l’écran */
-  margin: 10vh auto 0;          /* centré horizontal, décalé vertical */
-  border-radius: 12px;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.28);
-  padding: 16px;
-}
-
-/* Bouton fermer (X) */
-.modal-close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 24px;
-  line-height: 30px;
-  color: #111;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.modal-close:hover { background: #eee; }
-
-/* Contenu vide (placeholder) */
-.modal-content {
-  min-height: 120px;            /* juste pour voir la boîte même si vide */
-}
-
-
-
-
-
-
 /* ===== Bloc vert ===== */
 .bloc {
   background-color: #a9d3a9;   /* vert doux, comme ta maquette */
