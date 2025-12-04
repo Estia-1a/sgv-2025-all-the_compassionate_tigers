@@ -29,3 +29,12 @@ header h1 {
   color: #100f0f;
   margin-left: auto;
 }
+
+
+/* ===== Bloc vert ===== */
+.bloc {
+  background-color: #a9d3a9;   /* vert doux, comme ta maquette */
+  border-top: 1px solid #d7e7d7;
+  border-bottom: 1px solid #d7e7d7;
+  padding: 20px 16px;          /* espace intérieur */
+}
