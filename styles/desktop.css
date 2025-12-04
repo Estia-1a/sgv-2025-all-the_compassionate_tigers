@@ -45,7 +45,7 @@ header h1 {
 
 /* Section globale des cartes (pour espacer du bloc vert et centrer) */
 .cartes {
-  padding: 20px 16px;         /* espace autour de la section */
+  padding: 60px 30px;         /* espace autour de la section */
 }
 
 /* Conteneur en ligne */
