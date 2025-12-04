@@ -82,6 +82,13 @@ header h1 {
   line-height: 1.4;
 }
 
+/* Responsive : 3 colonnes sur grand écran */
+@media (min-width: 768px) {
+  section {
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  }
+}
+
 
 
 
