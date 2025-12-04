@@ -100,6 +100,18 @@ flex: 1;                    /* chaque carte prend 1/3 de la ligne */
   line-height: 1.4;
 }
 
+
+/* ===== Image centrée sous le texte ===== */
+.carte-image {
+  display: block;          /* enlève l'espace inline et permet margin:auto */
+  margin: 8px auto 0;      /* centre horizontalement, espace au-dessus */
+  max-width: 80%;          /* limite la taille dans la carte */
+  height: auto;            /* conserve les proportions */
+  object-fit: contain;     /* si image exotique, reste dans la boîte */
+}
+
+
+
 /* Responsive : 3 colonnes sur grand écran */
 @media (min-width: 768px) {
   section {
