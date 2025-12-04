@@ -9,7 +9,7 @@ header {
 
 /* Image du logo */
 .logo {
-    width: 20px;                /* Taille de l'image */
+    width: 25px;                /* Taille de l'image */
     height: auto;               /* Garde les proportions */
     margin-right: 10px;         /* Espace entre l'image et le titre */
 }
@@ -18,4 +18,14 @@ header {
 header h1 {
     font-size: 24px;
     color: #020202;
+}
+
+
+/* Groupe droite : réglages + profil */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #681818;
+  margin-left: auto;
 }
