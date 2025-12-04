@@ -151,5 +151,17 @@ flex: 1;                    /* chaque carte prend 1/3 de la ligne */
 }
 
 
+/* Le lien “En savoir plus >” */
+.carte-lien {
+  position: absolute;
+  bottom: 10px;               /* distance du bas */
+  right: 14px;                /* distance du bord droit */
+  font-size: 14px;
+  color: #0b3d2e;             /* couleur du lien */
+  text-decoration: underline; /* aspect “lien surligné” */
+  text-underline-offset: 2px; /* petit décalage de soulignement (plus lisible) */
+}
+
+
 
 
