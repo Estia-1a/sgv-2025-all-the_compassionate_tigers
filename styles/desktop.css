@@ -43,3 +43,19 @@ header h1 {
 }
 
 
+/* Style commun à toutes les cartes */
+.carte-bleue, .carte-verte, .carte-mauve {
+  padding: 16px;
+  border-radius: 10px;
+  color: #111;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Couleurs spécifiques */
+.carte-bleue {
+  background-color: #a9c4e8; /* bleu doux */
+}
+
+
+
