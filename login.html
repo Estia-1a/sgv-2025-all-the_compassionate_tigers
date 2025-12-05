@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles\login.css" media="screen and (max-width: 767px)"> 
-    <title>Connexion</title>
+    <title>Connexion / Inscription</title>
+    <link rel="stylesheet" href="styles/login.css"> 
 </head>
 <body>
-   
-    <main class="login-container">
-        <h2>Page de connexion</h2>
-        <p>Cette page sera complétée plus tard (formulaire e‑mail/mot de passe, etc.).</p>
+    <div class="login-page-container">
+        
+        <form class="login-form">
 
-        <!-- Lien pour revenir à l’accueil -->
-        <p><a>index.html← Retour</a></p>
-    </main>
+            <div class="toggle-buttons">
+                <button type="button" class="toggle-btn active">Se connecter</button>
+                <button type="button" class="toggle-btn inactive">Créer un compte</button>
+            </div>
 
+            <div class="input-group email-group">
+                <input type="email" id="email" name="email" placeholder="Adresse mail" required>
+            </div>
+
+            <div class="input-group password-group">
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            </div>
+
+            <div class="options-row">
+                <label for="remember-me" class="remember-me-label">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    Se souvenir
+                </label>
+                <a href="#" class="forgot-password-link">Mot de passe oublié ?</a>
+            </div>
+
+            <button type="submit" class="submit-btn">Valider</button>
+
+        </form>
+
+    </div>
 </body>
 </html>
