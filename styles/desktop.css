@@ -1,216 +1,205 @@
+/* --- Styles Généraux --- */
 
-header {
-    display: flex;  /* Met l'image et le texte sur la même ligne */
-    justify-content: space-between;            
-    align-items: center;        /* Aligne verticalement */
-    padding: 10px 20px;         /* Espacement autour */
-    background-color: transparent;  /* Couleur de fond */
-    border-bottom: none; /* Ligne en bas */
-    width: 100%; /* S'assurer qu'il prend toute la largeur */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px; /* Espace pour éviter que le contenu ne touche l'en-tête */
+    background-color: #ffffff; /* Fond de la page blanc */
+}
+
+.home-content-container {
+    width: 90%;
+    max-width: 1200px; /* Limite de largeur pour un grand écran */
+    margin: 0 auto; /* Centre le contenu */
+    padding: 20px;
+}
+
+/* --- Navigation "Toi" / "Actualités" --- */
+
+.top-nav-tabs {
+    display: flex;
+    justify-content: center; /* Centre les boutons de navigation */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.nav-tab-btn {
+    padding: 10px 30px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-tab-btn.active-tab {
+    background-color: black;
+    color: white;
+}
+
+/* --- Titre et Introduction --- */
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto; /* Centre le paragraphe */
+}
+
+/* --- Les Trois Blocs d'Action --- */
+
+.action-cards-container {
+    display: flex;
+    justify-content: space-between; /* Espace uniformément les cartes */
+    gap: 30px; /* Espace entre les cartes */
+}
+
+.action-card {
+    flex: 1; /* Permet aux cartes de prendre la même largeur */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    color: white;
     box-sizing: border-box;
+    text-align: center;
 }
 
-/* Image du logo */
+/* Couleurs spécifiques des cartes */
+.purple-card {
+    background-color: #6a0dad; /* Violet foncé */
+}
+
+.orange-card {
+    background-color: #ff8c00; /* Orange foncé */
+}
+
+.action-card h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.card-image-placeholder {
+    /* Ceci représente la grande croix au milieu */
+    flex-grow: 1; /* Prend l'espace maximal disponible */
+    border: 1px solid white;
+    margin: 15px 0;
+    min-height: 150px; /* Hauteur minimale pour l'image */
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    ); /* Simule la croix en transparence */
+}
+
+.card-action-btn {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto; /* Pousse le bouton vers le bas de la carte */
+}
+
+/* --- Styles de l'en-tête principal --- */
+header {
+    /* Utilise Flexbox pour aligner les trois blocs : Gauche, Centre, Droite */
+    display: flex; 
+    justify-content: space-between; /* Écarte au maximum les trois blocs */
+    align-items: center; /* Centre verticalement */
+    padding: 10px 20px; 
+    width: 100%;
+    box-sizing: border-box;
+    /* La maquette semble avoir une bordure supérieure/inférieure, ajoutons une pour la propreté */
+    border-bottom: 1px solid #ccc; 
+    background-color: white;
+}
+
+/* --- 1. & 3. BLOCS GAUCHE/DROIT (Icônes Filtres et Profil) --- */
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex; 
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon-logo {
+    width: 30px; 
+    height: 30px;
+    display: block;
+}
+
+/* Style spécifique pour l'icône de profil (le cercle) */
+.profile-icon {
+    border: 2px solid black;
+    border-radius: 50%; 
+    padding: 2px; 
+    width: 26px; 
+    height: 26px;
+}
+
+/* --- 2. BLOC CENTRAL (Logo + Titre) --- */
+
+.header-center-content {
+    display: flex;
+    align-items: center;
+    /* Flex-grow à 1 pour prendre l'espace restant, et auto-margin pour centrer */
+    flex-grow: 1; 
+    justify-content: center; /* Centre les éléments logo et titre au milieu */
+    position: absolute; /* Positionne absolument le centre pour qu'il soit au milieu de l'écran */
+    left: 50%;
+    transform: translateX(-50%);
+    /* S'assure que le contenu central ne chevauche pas les icônes */
+    padding: 0 60px; 
+}
+
+/* Image du logo dans le bloc central */
 .logo {
-    width: 35px;                /* Taille de l'image */
-    height: auto;  
-    margin: 0;             /* Garde les proportions */
+    width: 35px; 
+    height: auto;
+    margin-right: 10px; 
 }
 
-/* Titre */
-header h1 {
+/* Titre dans le bloc central */
+.header-center-content h1 {
     font-size: 24px;
     color: #020202;
-    margin-right: 5px;
+    margin: 0; 
 }
 
-/* Conteneur de la navigation (la boîte rectangulaire) */
-.main-actions-nav{
-    display: flex;
-    align-items: center;
-    /* La bordure rectangulaire autour des liens */
-    border: 1px solid black; 
-    margin: 0 auto; /* Centre la navigation au milieu de l'espace restant */
+/* S'assurer que les icônes gauche/droite ont la même taille et sont aux extrémités */
+.header-left-icon, .header-right-icon {
+    /* Utilise l'ordre Flexbox pour s'assurer qu'ils restent aux extrémités */
+    flex-shrink: 0; 
+    width: 40px; 
+    height: 40px;
+    z-index: 10; /* Assure que les icônes sont au-dessus du contenu central */
 }
-
-/* Styles des liens de navigation */
-.main-actions-nav  {
-    text-decoration: none; /* Supprime le soulignement */
-    color: black;
-    padding: 8px 15px; /* Espacement intérieur */
-    display: block;
-    white-space: nowrap; /* Empêche les liens de passer à la ligne */
-}
-
-/* Ajoute la ligne de séparation verticale entre les liens */
-.main-actions-nav {
-    border-right: 1px solid black;
-}
- 
-/* Le conteneur des deux icônes pour le positionnement Flexbox */
-.header-actions, .header-profil {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Style commun pour les images d'icônes */
-.header-actions .logo, .header-profil .logo {
-    width: 30px; /* Taille pour les icônes de réglage et profil */
-    height: 30px;
-    margin-right: 0;
-}
-
-
-
-
-/* ===== Bloc vert ===== */
-.bloc {
-  background-color: #a9d3a9;   /* vert doux, comme ta maquette */
-  border-top: 1px solid #d7e7d7;
-  border-bottom: 1px solid #d7e7d7;
-  padding: 20px 16px;          /* espace intérieur */
-  
-  /* >>> Ajoute un espace au-dessus <<< */
-  margin-top: 40px; /* tu peux augmenter à 30px ou 40px si tu veux plus d'air */
-}
-
-
-/* Section globale des cartes (pour espacer du bloc vert et centrer) */
-.cartes {
-  padding: 60px 30px;         /* espace autour de la section */
-}
-
-/* Conteneur en ligne */
-.cartes-ligne {
-  display: flex;              /* aligne les enfants sur une ligne */
-  gap: 16px;                  /* espace entre les cartes */
-  max-width: 1100px;          /* largeur max pour éviter trop large */
-  margin: 0 auto;             /* centre dans la page */
-}
-
-
-/* Style commun à toutes les cartes */
-.carte-bleue, .carte-verte, .carte-mauve {
-  
-flex: 1;                    /* chaque carte prend 1/3 de la ligne */
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.08);
-  color: #111;
-
-}
-
-/* Couleurs spécifiques */
-.carte-bleue {
-  background-color: #a9c4e8; /* bleu doux */
-}
-
-.carte-verte {
-  background-color: #bcdcab; /* vert doux */
-}
-
-.carte-mauve {
-  background-color: #b7a9e8; /* mauve doux */
-}
-
-
-/* Titres et paragraphes */
-.carte-bleue h3,
-.carte-verte h3,
-.carte-mauve h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-
-.carte-bleue p,
-.carte-verte p,
-.carte-mauve p {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-
-
-
-/* Cadre image centré et grand */
-.carte-image{
-  display:flex;                 /* centre l’image */
-  justify-content:center;
-  align-items:center;
-  margin-top: 12px;
-  width: 100%;
-  max-width: 360px;             /* largeur max du cadre */
-  height: 200px;                /* hauteur fixe : visuel régulier */
-  margin-left:auto;             /* centre le cadre */
-  margin-right:auto;
-  border-radius:10px;           /* optionnel: angles doux sur l’image */
-  overflow:hidden;              /* cache ce qui dépasse (recadrage) */
-  background: rgba(255,255,255,.25); /* légère teinte, optionnel */
-}
-
-
-.carte-image img{
-  display: block;               /* supprime l'espace inline */
-  width: 100%;
-  height: 100%;                 /* indispensable pour remplir la hauteur du cadre */
-  object-fit: cover;            /* remplit et recadre proprement */
-  object-position: center;      /* centre le recadrage */
-  margin: 0;                    /* aucune marge autour */
-  border: 0;
-}
-
-/* Responsive : 3 colonnes sur grand écran */
-@media (min-width: 768px) {
-  section {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-  }
-}
-
-
-/* Les cartes doivent être positionnées relativement
-   pour que le lien absolu s’aligne au coin de la carte */
-.carte-bleue, .carte-verte, .carte-mauve {
-  position: relative;          /* << clé pour le positionnement du lien */
-  flex: 1;
-  padding: 16px 20px 36px;     /* padding bas plus grand pour laisser la place au lien */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
-  border: 1px solid rgba(0,0,0,.08);
-  color: #111;
-}
-
-
-/* Le lien “En savoir plus >” */
-.carte-lien {
-  position: absolute;
-  bottom: 10px;               /* distance du bas */
-  right: 14px;                /* distance du bord droit */
-  font-size: 14px;
-  color: #0b3d2e;             /* couleur du lien */
-  text-decoration: underline; /* aspect “lien surligné” */
-  text-underline-offset: 2px; /* petit décalage de soulignement (plus lisible) */
-}
-
-/* Effet au survol (optionnel) */
-.carte-lien:hover {
-  color: #06251d;
-  text-decoration-thickness: 2px;
-}
-
-
-/* Barre de séparation centrée */
-.divider {
-  width: 60%;              /* largeur de la barre */
-  max-width: 700px;        /* limite sur grands écrans */
-  height: 2px;             /* épaisseur */
-  margin: 22px auto;       /* centre horizontalement + espace autour */
-  border: none;            /* enlève le style par défaut */
-  background: #3a3a3a;     /* couleur de la barre (gris foncé) */
-  border-radius: 999px;    /* coins arrondis pour un trait doux */
-  opacity: 0.9;            /* légère transparence (optionnel) */
-}
-

@@ -3,93 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles\desktop.css" media="screen and (min-width: 768px)"> 
-    <link rel="stylesheet" href="styles\mobile.css" media="screen and (max-width: 767px)"> 
-    <title>App Santé</title>
-  
+    <title>ESTIA APP - Application santé</title>
+    <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)"> 
+    <link rel="stylesheet" href="styles/main.css"> 
 </head>
 <body>
     <header>
-        <img src="media\pictures\Croix.png" alt="croix basque" class="logo">
-        <h1>Application santé </h1>
-
-        <nav class="header-actions" aria-label="actions principales"> 
-            <a href="#" class="action-link">Saisir données</a>
-            <a href="#" class="action-link">Obtenir conseils</a>
-            <a href="#" class="action-link">Visualiser progrès</a>
-        </nav>
-
-        <div class="header-actions">
-            <nav class="header actions" aria-label="actions"> </nav>
-                <a href="login.html" class="icon-button" aria-label="Page de connexion du profil"></a>
-                    <img src="media\pictures\Reglage.png" alt="Réglage" class="logo">
-                
-        
-            <a href="login.html" class="icon-button" aria-label="Page de connexion du profil">
-            <img src="media\pictures\Profil.png" alt="Profil" class="logo">
-        </div>
-    </header>
+    <button class="icon-button header-left-icon" type="button" aria-label="Filtres ou Réglages">
+        <img src="media\pictures\Reglage.png" alt="Réglage" class="icon-logo">
+    </button>
     
-    <div class="bloc">
-        <h2>ESTIA APP SANTÉ</h2>
-        <p>
-        Le "app santé" doit permettre aux " résident locaux du pays basque " de réaliser " un suivi personnalisé
-        de leur santé en enregistrant divers aspect de leur santé physique et mentale " et bénéficier
-        de conseils de santé personnalisée dans un but de maintenir un mode de vie sain.
-        </p>
+    <div class="header-center-content">
+        <img src="media\pictures\Croix.png" alt="croix basque" class="logo">
+        <h1>Application santé</h1>
     </div>
 
-    
-    <section class="cartes">
-        <div class="cartes-ligne">
+    <a href="login.html" class="icon-button header-right-icon" aria-label="Profil et Connexion">
+        <img src="media\pictures\Profil.png" alt="Profil" class="icon-logo profile-icon">
+    </a>
+</header>
 
-        <div class="carte-bleue">
-            <h3>A propos de nous</h3>
-            <p>Enregistre tes indicateurs (poids, sommeil, humeur…) 
-           pour suivre ton évolution.
-            </p>
-            <div class="carte-image">
-                <img src="media\pictures\AboutUs.jpg" alt="AboutUs" class="logo">
+    <main class="home-content-container">
+
+        <nav class="top-nav-tabs">
+            <a href="#" class="nav-tab-btn active-tab">Toi</a>
+            <a href="#" class="nav-tab-btn">Actualités</a>
+        </nav>
+
+        <section class="intro-section">
+            <h2>Bonjour ! Bienvenue sur l'application ESTIA APP</h2>
+            <p>Le "app santé" doit permettre aux " résident locaux du pays basque " de " réaliser " un suivi personnalisé de leur santé en enregistrant divers aspect de leur santé physique et mentale " et bénéficier de conseils de santé personnalisée dans un but de maintenir un mode de vie sain.</p>
+        </section>
+
+        <section class="action-cards-container">
+            
+            <div class="action-card purple-card">
+                <h3>Enregistrer ses données personnelles</h3>
+                <div class="card-image-placeholder"></div>
+                <button class="card-action-btn">Renseigner ses données</button>
             </div>
-            <div class="carte-lien">
-                <a>En savoir plus &gt;</a>
+
+            <div class="action-card orange-card">
+                <h3>Consulter son état de santé</h3>
+                <div class="card-image-placeholder"></div>
+                <button class="card-action-btn">Consulter</button>
             </div>
-        </div>
 
-        <div class="carte-verte">
-            <h3>Événement</h3>
-            <p>Enregistre tes indicateurs (poids, sommeil, humeur…) 
-            pour suivre ton évolution.
-            </p>
-            <div class="carte-image">
-                <img src="media\pictures\evenement.jpg" alt="Evenement" class="logo">
+            <div class="action-card purple-card">
+                <h3>Recevoir des conseils de santé personnalisée</h3>
+                <div class="card-image-placeholder"></div>
+                <button class="card-action-btn">Consulter</button>
             </div>
-            <div class="carte-lien">
-                <a>En savoir plus &gt;</a>
-            </div>
-        </div>
 
-        <div class="carte-mauve">
-            <h3>Actualités</h3>
-            <p>Enregistre tes indicateurs (poids, sommeil, humeur…) 
-                pour suivre ton évolution.
-            </p>
-            <div class="carte-image">
-                <img src="media\pictures\Actualité.jpg" alt="Actualité" class="logo">
-            </div>
-            <div class="carte-lien">
-                <a>En savoir plus &gt;</a>
-            </div>
-        </div>
-        </div>
-    </section>
+        </section>
 
-    <hr class="divider">    
-
-    
-
-
-
+    </main>
 </body>
 </html>
