@@ -65,10 +65,13 @@ body {
     display: flex;
     justify-content: space-between; /* Espace uniformément les cartes */
     gap: 30px; /* Espace entre les cartes */
+    /* [MAINTENU] Permet le retour à la ligne pour la réactivité */
+    flex-wrap: wrap;
 }
 
 .action-card {
-    flex: 1; /* Permet aux cartes de prendre la même largeur */
+    /* [MAINTENU] Nouvelle formule flex pour la réactivité sur ordinateur/tablette */
+    flex: 1 1 300px; 
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -76,6 +79,8 @@ body {
     color: white;
     box-sizing: border-box;
     text-align: center;
+    /* [MAINTENU] Hauteur minimale pour que l'aspect des cartes soit uniforme */
+    min-height: 400px;
 }
 
 /* Couleurs spécifiques des cartes */
@@ -92,27 +97,35 @@ body {
     margin-top: 0;
 }
 
-.card-image-placeholder {
-    /* Ceci représente la grande croix au milieu */
-    flex-grow: 1; /* Prend l'espace maximal disponible */
+/* [MODIFIÉ/AJOUTÉ] Ciblage du conteneur d'image (DIV) */
+.card-image-wrapper {
+    /* Ceci est le carré qui encadre l'image, il prend tout l'espace */
+    flex-grow: 1; 
     border: 1px solid white;
-    margin: 15px 0;
-    min-height: 150px; /* Hauteur minimale pour l'image */
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1) 10px,
-        transparent 10px,
-        transparent 20px
-    ),
-    repeating-linear-gradient(
-        -45deg,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1) 10px,
-        transparent 10px,
-        transparent 20px
-    ); /* Simule la croix en transparence */
+    /* [MODIFIÉ] Ajout de plus d'espace en bas (25px) avant le bouton pour l'espacement demandé */
+    margin: 15px 0 25px 0; 
+    min-height: 150px; 
+    
+    /* [AJOUTÉ] Paramètres pour centrer et gérer l'image à l'intérieur */
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center; /* Centre l'image verticalement */
+    background: none; 
 }
+
+/* [AJOUTÉ] Ciblage de l'image (IMG) à l'intérieur du wrapper */
+.card-image-wrapper img {
+    /* [MODIFIÉ] Pour que l'image remplisse le conteneur du wrapper (le carré blanc) */
+    width: 100%; 
+    height: 100%;
+    
+    /* [MODIFIÉ] Propriété clé pour le rendu : 'cover' pour remplir le carré et corriger l'aspect flou/mal centré */
+    object-fit: cover; 
+    display: block;
+}
+
+/* [SUPPRIMÉ] L'ancienne classe .card-image est supprimée car nous utilisons .card-image-wrapper */
+/* .card-image { ... } */
 
 .card-action-btn {
     background-color: white;
@@ -125,16 +138,32 @@ body {
     margin-top: auto; /* Pousse le bouton vers le bas de la carte */
 }
 
+/* --- Media Query pour la Réactivité (desktop, tablette, mobile) --- */
+@media (max-width: 992px) {
+    .action-card {
+        flex: 1 1 calc(50% - 30px); 
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-cards-container {
+        flex-direction: column;
+    }
+    .action-card {
+        flex: 1 1 100%; 
+        margin-bottom: 20px;
+    }
+}
+
 /* --- Styles de l'en-tête principal --- */
 header {
-    /* Utilise Flexbox pour aligner les trois blocs : Gauche, Centre, Droite */
     display: flex; 
-    justify-content: space-between; /* Écarte au maximum les trois blocs */
-    align-items: center; /* Centre verticalement */
+    justify-content: space-between; 
+    align-items: center; 
     padding: 10px 20px; 
     width: 100%;
     box-sizing: border-box;
-    /* La maquette semble avoir une bordure supérieure/inférieure, ajoutons une pour la propreté */
     border-bottom: 1px solid #ccc; 
     background-color: white;
 }
@@ -157,7 +186,6 @@ header {
     display: block;
 }
 
-/* Style spécifique pour l'icône de profil (le cercle) */
 .profile-icon {
     border: 2px solid black;
     border-radius: 50%; 
@@ -171,35 +199,37 @@ header {
 .header-center-content {
     display: flex;
     align-items: center;
-    /* Flex-grow à 1 pour prendre l'espace restant, et auto-margin pour centrer */
     flex-grow: 1; 
-    justify-content: center; /* Centre les éléments logo et titre au milieu */
-    position: absolute; /* Positionne absolument le centre pour qu'il soit au milieu de l'écran */
+    justify-content: center; 
+    position: absolute; 
     left: 50%;
     transform: translateX(-50%);
-    /* S'assure que le contenu central ne chevauche pas les icônes */
     padding: 0 60px; 
 }
 
-/* Image du logo dans le bloc central */
 .logo {
     width: 35px; 
     height: auto;
     margin-right: 10px; 
 }
 
-/* Titre dans le bloc central */
+/* [MODIFIÉ/AJOUTÉ] Style pour la seconde croix basque */
+.second-logo {
+    width: 35px; /* Même taille que le premier logo */
+    height: auto;
+    margin-left: 10px; /* Espace avec le titre */
+    margin-right: 0; /* Assurez-vous qu'il n'y a pas de marge à droite */
+}
+
 .header-center-content h1 {
     font-size: 24px;
     color: #020202;
     margin: 0; 
 }
 
-/* S'assurer que les icônes gauche/droite ont la même taille et sont aux extrémités */
 .header-left-icon, .header-right-icon {
-    /* Utilise l'ordre Flexbox pour s'assurer qu'ils restent aux extrémités */
     flex-shrink: 0; 
     width: 40px; 
     height: 40px;
-    z-index: 10; /* Assure que les icônes sont au-dessus du contenu central */
+    z-index: 10; 
 }
